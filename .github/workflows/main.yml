@@ -30,7 +30,6 @@ jobs:
       - name: Pre-build devcontainer image for amd64 and arm64
         uses: devcontainers/ci@v0.3
         with:
-          platform: linux/amd64,linux/arm64
           imageName: ghcr.io/mrxcitement/devc-cobol
           cacheFrom: ghcr.io/mrxcitement/devc-cobol
           push: always
