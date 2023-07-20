@@ -2,7 +2,7 @@ name: Build and publish multi-arch container to ghcr.io
 
 on:
   push:
-    branches: ['release']
+    branches: ['main']
 
 env:
   REGISTRY: ghcr.io
@@ -42,8 +42,8 @@ jobs:
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
           # Strip "v" prefix from tag name
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-          # when the branch is release, replace release with latest
-          [ "$VERSION" == "release" ] && VERSION=latest
+          # when the branch is main, replace main with latest
+          [ "$VERSION" == "main" ] && VERSION=latest
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
           # Build and Publish container image
