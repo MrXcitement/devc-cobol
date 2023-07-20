@@ -2,6 +2,7 @@
 ## This devcontainer is based on the base-debian bookworm (v12)
 ## https://github.com/devcontainers/images/tree/main/src/base-debian
 FROM mcr.microsoft.com/devcontainers/base:bookworm
+LABEL org.opencontainers.image.source="https://github.com/mrxcitement/devc-cobol"
 
 # To build and install GnuCOBOL I used commands from their documentation
 # https://gnucobol.sourceforge.io/faq/index.html#building-gnucobol-3-0-release-candidates
