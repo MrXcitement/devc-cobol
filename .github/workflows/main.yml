@@ -37,6 +37,10 @@ jobs:
 
       - name: Build devcontainer multi-platform image
         uses: devcontainers/ci@v0.3
+        env:
+          BUILDX_NO_DEFAULT_ATTESTATIONS: true
         with:
           imageName: ghcr.io/mrxcitement/devc-cobol
+          cacheFrom: ghcr.io/mrxcitement/devc-cobol
           platform: linux/amd64,linux/arm64
+          push: always
